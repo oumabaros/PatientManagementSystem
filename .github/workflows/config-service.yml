@@ -7,12 +7,12 @@ on:
       - ".github/workflows/config-service.yml"
 env:
   REGISTRY: ghcr.io
-  SERVICE_IMAGE_NAME: oumabaros@gmail.com/analytics-service
+  SERVICE_IMAGE_NAME: oumabaros@gmail.com/config-service
   VERSION: latest
 
 jobs:
   build:
-    name: Build and Test analytics-service
+    name: Build and Test config-service
     runs-on: ubuntu-22.04
     permissions:
       contents: read
