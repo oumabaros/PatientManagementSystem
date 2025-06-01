@@ -1,9 +1,10 @@
-name: commit analytics-service
+name: "billing-service"
 
 on:
   push:
     paths:
-      - 'analytics-service/**'
+      - "billing-service/**"
+      - ".github/workflows/billing-service.yaml"
 env:
   REGISTRY: ghcr.io
   SERVICE_IMAGE_NAME: oumabaros@gmail.com/analytics-service
@@ -39,6 +40,8 @@ jobs:
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Build, unit tests and integration tests
-        run: |
-          chmod +x analytics-service/mvnw
-          analytics-service/mvnw install
+        run: |-
+          cd billing-service
+          chmod +x mvnw
+          ./mvnw install
+          
