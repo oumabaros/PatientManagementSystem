@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "auth-service/**"
-      - ".github/workflows/auth-service.yaml"
+      - ".github/workflows/auth-service.yml"
 env:
   REGISTRY: ghcr.io
   SERVICE_IMAGE_NAME: oumabaros@gmail.com/analytics-service
