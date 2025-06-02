@@ -7,7 +7,7 @@ on:
       - ".github/workflows/billing-service.yml"
 env:
   REGISTRY: ghcr.io
-  SERVICE_IMAGE_NAME: oumabaros@gmail.com/billing-service
+  IMAGE_NAME: oumabaros@gmail.com/billing-service
   VERSION: latest
 
 jobs:
