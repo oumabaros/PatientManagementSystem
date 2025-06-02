@@ -7,7 +7,7 @@ on:
       - ".github/workflows/config-service.yml"
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: oumabaros/config-service
+  IMAGE_NAME: oumabaros@gmail.com/config-service
   VERSION: latest
 
 jobs:
@@ -66,7 +66,9 @@ jobs:
         run: |
           cd microservices/config-service
           chmod +x mvnw
-          ./mvnw spring-boot:build-image ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -DskipTests
+          ./mvnw spring-boot:build-image \
+          -Dspring-boot.build-image.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} \
+          -DskipTests
 
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v3
