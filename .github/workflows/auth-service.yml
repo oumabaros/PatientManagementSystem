@@ -66,8 +66,7 @@ jobs:
         run: |
           cd microservices/auth-service
           chmod +x mvnw
-          ./mvnw spring-boot:build-image \
-            --imageName ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -DskipTests
+          ./mvnw spring-boot:build-image ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -DskipTests
 
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v3
