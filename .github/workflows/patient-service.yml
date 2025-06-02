@@ -7,7 +7,7 @@ on:
       - ".github/workflows/patient-service.yml"
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: oumabaros@gmail.com/patient-service
+  IMAGE_NAME: oumabaros/patient-service
   VERSION: latest
 
 jobs:
@@ -89,4 +89,4 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish container image
-        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+        run: -Dspring-boot.build-image.imageName ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
