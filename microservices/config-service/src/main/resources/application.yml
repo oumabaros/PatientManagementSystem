@@ -9,7 +9,7 @@ spring:
         git:
           uri: https://github.com/oumabaros/pms-config
           skipSslValidation: true
-          basedir: /home/ouma/repo
+          basedir: /var/tmp/spring-cloud/repos/
           strictHostKeyChecking: false
           default-label: master
           timeout: 5
