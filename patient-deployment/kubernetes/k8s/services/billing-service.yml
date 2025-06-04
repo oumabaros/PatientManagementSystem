@@ -17,6 +17,13 @@ spec:
       containers:
         - name: billing-service
           image: billing-service:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:

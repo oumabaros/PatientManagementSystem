@@ -34,6 +34,13 @@ spec:
       containers:
         - name: kafka-container
           image: doughgle/kafka-kraft
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
           ports:
             - containerPort: 9092
             - containerPort: 9093
